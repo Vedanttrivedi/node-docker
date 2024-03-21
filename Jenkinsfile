@@ -24,7 +24,7 @@ pipeline {
         }
         stage("Build") {
             steps {
-                sh 'npm run build' // Replace 'npm run build' with your actual build script
+                sh 'npm run' // Replace 'npm run build' with your actual build script
             }
         }
     }
