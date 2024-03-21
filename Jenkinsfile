@@ -10,12 +10,10 @@ pipeline {
                 checkout scm
             }
         }
-        stage("Setup") {
+        stage("Install npm packages") {
             steps {
                 script {
-                    sh 'sudo apt update'
-                    sh 'sudo apt install -y npm'
-                    sh 'npm install -g npm@latest' // Update npm to the latest version (optional)
+                    sh 'npm install'
                 }
             }
         }
@@ -26,7 +24,7 @@ pipeline {
         }
         stage("Build") {
             steps {
-                sh 'npm run build' // Replace 'npm run' with the actual build script
+                sh 'npm run build' // Replace 'npm run build' with your actual build script
             }
         }
     }
